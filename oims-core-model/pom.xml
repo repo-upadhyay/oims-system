@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>oims-core-model</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>oims-core-model</name>
@@ -19,7 +19,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.6</jdk.version>
+		<jdk.version>1.8</jdk.version>
 
 
 		<jackson-version>1.9.13</jackson-version>
@@ -536,4 +536,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<groupId>com.oims</groupId>
 </project>

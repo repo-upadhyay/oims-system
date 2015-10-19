@@ -15,7 +15,7 @@
 
 
 	<!-- search -->
-	<import resource="classpath:/spring/wms-search.xml" />
+	<import resource="classpath:/spring/oims-search.xml" />
 
 
 </beans>

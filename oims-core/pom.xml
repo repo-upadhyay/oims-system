@@ -8,9 +8,9 @@
     <artifactId>oims</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-
+	<groupId>com.oims</groupId>
 	<artifactId>oims-core</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>oims-core</name>
@@ -18,12 +18,11 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.6</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		
-		<oims-core-model.version>2.0.1-SNAPSHOT</oims-core-model.version>
-		<oims-core-modules.version>2.0.1-SNAPSHOT</oims-core-modules.version>
-		<oims-search.version>0.0.1-SNAPSHOT</oims-search.version>
-		<sm-search.version>0.0.3</sm-search.version>
+		<oims-core-model.version>0.0.1-SNAPSHOT</oims-core-model.version>
+		<oims-core-modules.version>0.0.1-SNAPSHOT</oims-core-modules.version>
+		<com.wms.search.services>0.0.1-SNAPSHOT</com.wms.search.services>
 		
 		
 		<jackson-version>1.9.13</jackson-version>
@@ -77,7 +76,7 @@
 		<dependency>
 			<groupId>com.oims</groupId>
 			<artifactId>oims-search</artifactId>
-			<version>${oims-search.version}</version>
+			<version>${com.wms.search.services}</version>
 		</dependency>
 		
 		<!-- Loggers -->

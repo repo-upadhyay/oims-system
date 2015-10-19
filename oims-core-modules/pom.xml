@@ -10,7 +10,7 @@
   </parent>
 
 	<artifactId>oims-core-modules</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>oims-core-modules</name>
@@ -18,9 +18,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.6</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		
-		<oims-core-model.version>2.0.1-SNAPSHOT</oims-core-model.version>
+		<oims-core-model.version>0.0.1-SNAPSHOT</oims-core-model.version>
 
 	</properties>
 
@@ -133,4 +133,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<groupId>com.oims</groupId>
 </project>

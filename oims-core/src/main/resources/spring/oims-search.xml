@@ -21,7 +21,7 @@
 		<property name="clusterPort" value="9300"/>
 	</bean>
 	
-	<bean id="searchDelegate" class="com.oims.search.services.impl.SearchDelegateImpl">
+	<bean id="searchDelegate" class="com.wms.search.services.impl.SearchDelegateImpl">
 		<property name="searchClient">
 				<ref bean="searchClient" />
 		</property>
@@ -32,19 +32,19 @@
 	This file contains flow definitions for indexing and searching
 	-->
 	
-	<bean id="searchService" class="com.oims.search.services.SearchService"/>
+	<bean id="searchService" class="com.wms.search.services.SearchService"/>
 
 
 	
-	<bean id="searchWorkflow" class="com.oims.search.services.workflow.SearchWorkflow">
+	<bean id="searchWorkflow" class="com.wms.search.services.workflow.SearchWorkflow">
 		<property name="searchFlow">
 			<list>
-				<bean id="search" class="com.oims.search.services.worker.SearchWorkerImpl"/>
+				<bean id="search" class="com.wms.search.services.worker.SearchWorkerImpl"/>
 			</list>
 		</property>
 		<property name="searchKeywordWorkflow">
 			<list>
-				<bean id="searchKeyword" class="com.oims.search.services.worker.KeywordSearchWorkerImpl"/>
+				<bean id="searchKeyword" class="com.wms.search.services.worker.KeywordSearchWorkerImpl"/>
 			</list>
 		</property>
 		<property name="searchClient">
@@ -52,7 +52,7 @@
 		</property>
 	</bean>
 
-	<bean id="indexWorkflow" class="com.oims.search.services.workflow.IndexWorkflow">
+	<bean id="indexWorkflow" class="com.wms.search.services.workflow.IndexWorkflow">
 		<property name="indexWorkflow">
 			<list>
 				<ref bean="index" />
@@ -64,10 +64,10 @@
 		</property>
 	</bean>
 	
-	<bean id="deleteWorkflow" class="com.oims.search.services.workflow.DeleteObjectWorkflow">
+	<bean id="deleteWorkflow" class="com.wms.search.services.workflow.DeleteObjectWorkflow">
 		<property name="deleteObjectWorkflow">
 			<list>
-				<bean id="deleteObject" class="com.oims.search.services.worker.DeleteObjectImpl"/>
+				<bean id="deleteObject" class="com.wms.search.services.worker.DeleteObjectImpl"/>
 				<ref bean="deleteKeywords" />
 			</list>
 		</property>
@@ -76,14 +76,14 @@
 		</property>
 	</bean>
 	
-	<!--<bean id="getWorkflow" class="com.oims.search.services.workflow.SearchWorkflow">-->
-	<bean id="getWorkflow" class="com.oims.search.services.workflow.GetWorkflow">
+	<!--<bean id="getWorkflow" class="com.wms.search.services.workflow.SearchWorkflow">-->
+	<bean id="getWorkflow" class="com.wms.search.services.workflow.GetWorkflow">
 		<property name="searchClient">
 				<ref bean="searchClient" />
 		</property>
 	</bean>
 	
-	<bean id="deleteKeywords" class="com.oims.search.services.worker.DeleteKeywordsImpl">
+	<bean id="deleteKeywords" class="com.wms.search.services.worker.DeleteKeywordsImpl">
 		<property name="indexConfigurations">
 			<list>
 				<ref bean="keywordindex_en" />
@@ -92,7 +92,7 @@
 		</property>
 	</bean>
 	
-	<bean id="index" class="com.oims.search.services.worker.ObjectIndexerImpl">
+	<bean id="index" class="com.wms.search.services.worker.ObjectIndexerImpl">
 		<property name="indexConfigurations">
 			<list>
 				<ref bean="productindex_en_defaultstore" />
@@ -118,7 +118,7 @@
 		<property name="settingsFileName" value="search/settings_product_fr.json"/>
 	</bean>
 		
-	<bean id="keyword" class="com.oims.search.services.worker.KeywordIndexerImpl">
+	<bean id="keyword" class="com.wms.search.services.worker.KeywordIndexerImpl">
 		<property name="indexConfigurations">
 			<list>
 				<ref bean="keywordindex_en" />

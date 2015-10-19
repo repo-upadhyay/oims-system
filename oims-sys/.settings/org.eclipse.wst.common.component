@@ -4,13 +4,16 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="oims-core-2.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core/oims-core">
+        <dependent-module archiveName="oims-core-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core-model/oims-core-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="oims-core-model-2.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core-model/oims-core-model">
+        <dependent-module archiveName="oims-core-modules-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core-modules/oims-core-modules">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="oims-core-modules-2.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core-modules/oims-core-modules">
+        <dependent-module archiveName="oims-core-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-core/oims-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oims-search-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oims-search/oims-search">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/oims-sys/target/classes"/>

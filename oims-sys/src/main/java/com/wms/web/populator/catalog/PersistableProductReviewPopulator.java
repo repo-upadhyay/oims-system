@@ -6,7 +6,7 @@ import java.util.Set;
 import org.apache.commons.lang.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.oims.search.utils.DateUtil;
+import com.wms.search.utils.DateUtil;
 import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.product.model.review.ProductReview;
 import com.wms.core.business.catalog.product.model.review.ProductReviewDescription;

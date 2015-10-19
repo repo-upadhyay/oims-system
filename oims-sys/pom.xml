@@ -9,18 +9,18 @@
 		<artifactId>oims</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.wms</groupId>
+	<groupId>com.oims</groupId>
 	<artifactId>oims-sys</artifactId>
 	<name>oims-sys</name>
 	<packaging>war</packaging>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<java-version>1.6</java-version>
+		<java-version>1.8</java-version>
 		<jackson-version>1.9.13</jackson-version>
 
-		<oims-core.version>2.0.1-SNAPSHOT</oims-core.version>
-		<oims-core-model.version>2.0.1-SNAPSHOT</oims-core-model.version>
-		<oims-core-modules.version>2.0.1-SNAPSHOT</oims-core-modules.version>
+		<oims-core.version>0.0.1-SNAPSHOT</oims-core.version>
+		<oims-core-model.version>0.0.1-SNAPSHOT</oims-core-model.version>
+		<oims-core-modules.version>0.0.1-SNAPSHOT</oims-core-modules.version>
 		<oims-search.version>0.0.1-SNAPSHOT</oims-search.version>
 
 
@@ -32,18 +32,13 @@
 		<oims-core.jodatime.version>2.0</oims-core.jodatime.version>
 		<oims-core.jodatime-hibernate.version>1.3</oims-core.jodatime-hibernate.version>
 		<sm-search.version>0.0.3</sm-search.version>
-		
+
 
 	</properties>
 	<dependencies>
 
 
-		<!-- oims-core -->
-		<dependency>
-			<groupId>com.oims</groupId>
-			<artifactId>oims-core</artifactId>
-			<version>${oims-core.version}</version>
-		</dependency>
+		
 
 		<!-- oims-core-model -->
 		<dependency>
@@ -58,7 +53,13 @@
 			<artifactId>oims-core-modules</artifactId>
 			<version>${oims-core-modules.version}</version>
 		</dependency>
-
+		
+		<!-- oims-core -->
+		<dependency>
+			<groupId>com.oims</groupId>
+			<artifactId>oims-core</artifactId>
+			<version>${oims-core.version}</version>
+		</dependency>
 
 		<!-- oims-search -->
 		<dependency>
@@ -66,11 +67,8 @@
 			<artifactId>oims-search</artifactId>
 			<version>${oims-search.version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>com.shopizer</groupId>
-			<artifactId>sm-search</artifactId>
-			<version>${sm-search.version}</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.shopizer</groupId> <artifactId>sm-search</artifactId> 
+			<version>${sm-search.version}</version> </dependency> -->
 
 
 

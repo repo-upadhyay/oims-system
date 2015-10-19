@@ -1,2 +1,5 @@
 /target/
 /data/
+/.classpath
+/pom.xml.releaseBackup
+/.settings/

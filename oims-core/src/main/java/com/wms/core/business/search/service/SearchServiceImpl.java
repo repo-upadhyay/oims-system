@@ -17,10 +17,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.oims.search.services.Facet;
-import com.oims.search.services.SearchHit;
-import com.oims.search.services.SearchRequest;
-import com.oims.search.services.SearchResponse;
+import com.wms.search.services.Facet;
+import com.wms.search.services.SearchHit;
+import com.wms.search.services.SearchRequest;
+import com.wms.search.services.SearchResponse;
 import com.wms.core.business.catalog.category.model.Category;
 import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.product.model.description.ProductDescription;
@@ -47,7 +47,7 @@ public class SearchServiceImpl implements SearchService {
 	private final static String INDEX_PRODUCTS = "INDEX_PRODUCTS";
 
 	@Autowired
-	private com.oims.search.services.SearchService searchService;
+	private com.wms.search.services.SearchService searchService;
 	
 	@Autowired
 	private PricingService pricingService;
@@ -282,8 +282,8 @@ public class SearchServiceImpl implements SearchService {
 						searchFacets.put(key, fs);
 					}
 					
-					List<com.oims.search.services.Entry> facetEntries = f.getEntries();
-					for(com.oims.search.services.Entry facetEntry : facetEntries) {
+					List<com.wms.search.services.Entry> facetEntries = f.getEntries();
+					for(com.wms.search.services.Entry facetEntry : facetEntries) {
 					
 						SearchFacet searchFacet = new SearchFacet();
 						searchFacet.setKey(facetEntry.getName());
