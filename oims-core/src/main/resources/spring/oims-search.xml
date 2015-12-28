@@ -5,14 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
 	<!-- can have different search client for indexing & searching -->
-	<bean id="searchClient" class="com.oims.search.utils.SearchClient">
+	<bean id="searchClient" class="com.wms.search.utils.SearchClient">
 		<property name="serverConfiguration">
 				<ref bean="serverConfiguration" />
 		</property>
 	</bean>
 	
 	<!-- Server configuration -->
-	<bean id="serverConfiguration" class="com.oims.search.utils.ServerConfiguration">
+	<bean id="serverConfiguration" class="com.wms.search.utils.ServerConfiguration">
 		<property name="clusterName" value="oims"/>
 		<!-- local (embedded version, will create new indexes in the working directory) or remote (requires existing server) -->
 		<property name="mode" value="local"/>
@@ -104,14 +104,14 @@
 
 	
 	<!-- The presence of those properties will allow the creation of mapping files -->
-	<bean id="productindex_en_defaultstore" class="com.oims.search.utils.IndexConfiguration">
+	<bean id="productindex_en_defaultstore" class="com.wms.search.utils.IndexConfiguration">
 		<property name="collectionName" value="product_en_default"/>
 		<property name="indexName" value="product_en"/>
 		<property name="mappingFileName" value="search/product.json"/>
 		<property name="settingsFileName" value="search/settings_product.json"/>
 	</bean>
 	
-	<bean id="productindex_fr_defaultstore" class="com.oims.search.utils.IndexConfiguration">
+	<bean id="productindex_fr_defaultstore" class="com.wms.search.utils.IndexConfiguration">
 		<property name="collectionName" value="product_fr_default"/>
 		<property name="indexName" value="product_fr"/>
 		<property name="mappingFileName" value="search/product_fr.json"/>
@@ -127,7 +127,7 @@
 		</property>
 	</bean>
 	
-	<bean id="keywordindex_en" class="com.oims.search.utils.CustomIndexConfiguration">
+	<bean id="keywordindex_en" class="com.wms.search.utils.CustomIndexConfiguration">
 		<property name="collectionName" value="keyword_en_%store%"/>
 		<property name="createOnIndexName" value="product_en"/>
 		<property name="fields">
@@ -146,7 +146,7 @@
 	</bean>
 
 
-	<bean id="keywordindex_fr" class="com.oims.search.utils.CustomIndexConfiguration">
+	<bean id="keywordindex_fr" class="com.wms.search.utils.CustomIndexConfiguration">
 		<property name="collectionName" value="keyword_fr_%store%"/>
 		<property name="createOnIndexName" value="product_fr"/>
 		<property name="fields">
@@ -166,16 +166,16 @@
 	
 	
 	<!-- supported field types List, Integer, Double, Boolean, String -->
-	<bean id="field1" class="com.oims.search.utils.CustomIndexFieldConfiguration">
+	<bean id="field1" class="com.wms.search.utils.CustomIndexFieldConfiguration">
 		<property name="fieldName" value="tags"/>
 		<property name="fieldType" value="List"/>
 	</bean>
-	<bean id="field2" class="com.oims.search.utils.CustomIndexFieldConfiguration">
+	<bean id="field2" class="com.wms.search.utils.CustomIndexFieldConfiguration">
 		<property name="fieldName" value="name"/>
 		<property name="fieldType" value="String"/>
 	</bean>
 	<!--
-	<bean id="filter1" class="com.oims.search.utils.CustomIndexFieldConfiguration">
+	<bean id="filter1" class="com.wms.search.utils.CustomIndexFieldConfiguration">
 		<property name="fieldName" value="price"/>
 		<property name="fieldType" value="Double"/>
 	</bean>

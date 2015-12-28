@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.wms.core.business.catalog.product.dao.attribute.ProductAttributeDao;
 import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.product.model.attribute.ProductAttribute;
-import com.wms.core.business.catalog.product.model.price.ProductPrice;
 import com.wms.core.business.generic.exception.ServiceException;
 import com.wms.core.business.generic.service.SalesManagerEntityServiceImpl;
 import com.wms.core.business.merchant.model.MerchantStore;

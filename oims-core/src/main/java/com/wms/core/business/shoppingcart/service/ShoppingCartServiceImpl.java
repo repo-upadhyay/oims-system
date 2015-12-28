@@ -17,9 +17,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.product.model.attribute.ProductAttribute;
 import com.wms.core.business.catalog.product.model.price.FinalPrice;
+import com.wms.core.business.catalog.product.model.variant.ProductVariant;
 import com.wms.core.business.catalog.product.service.PricingService;
 import com.wms.core.business.catalog.product.service.ProductService;
 import com.wms.core.business.catalog.product.service.attribute.ProductAttributeService;
+import com.wms.core.business.catalog.product.service.variant.ProductVariantService;
 import com.wms.core.business.customer.model.Customer;
 import com.wms.core.business.generic.exception.ServiceException;
 import com.wms.core.business.generic.service.SalesManagerEntityServiceImpl;
@@ -30,6 +32,7 @@ import com.wms.core.business.shoppingcart.dao.ShoppingCartItemDao;
 import com.wms.core.business.shoppingcart.model.ShoppingCart;
 import com.wms.core.business.shoppingcart.model.ShoppingCartAttributeItem;
 import com.wms.core.business.shoppingcart.model.ShoppingCartItem;
+import com.wms.core.business.shoppingcart.model.ShoppingCartVariantItem;
 
 @Service("shoppingCartService")
 public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long, ShoppingCart> implements ShoppingCartService {
@@ -48,6 +51,9 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
 
 	@Autowired
     private ProductAttributeService productAttributeService;
+	
+	@Autowired
+	ProductVariantService productVariantService;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ShoppingCartServiceImpl.class);
 
@@ -516,6 +522,24 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
                                             attributeItem.setId( shoppingCartAttributeItem.getId() );
                                         }
                                         item.addAttributes( attributeItem );
+
+                                    }
+                                }
+                            }
+                            
+                            List<ShoppingCartVariantItem> cartVariants = new ArrayList<ShoppingCartVariantItem>( shoppingCartItem.getVariants() );
+                            if(CollectionUtils.isNotEmpty( cartAttributes )){
+                                for(ShoppingCartVariantItem shoppingCartVariantItem :cartVariants ){
+                                    ProductVariant productVariant =productVariantService.getById( shoppingCartVariantItem.getId() );
+                                    if ( productVariant != null
+                                                    && productVariant.getProduct().getId().longValue() == product.getId().longValue() ){
+
+                                    	ShoppingCartVariantItem variantItem=new ShoppingCartVariantItem(item,productVariant);
+                                        if ( shoppingCartVariantItem.getId() > 0 )
+                                        {
+                                        	variantItem.setId( shoppingCartVariantItem.getId() );
+                                        }
+                                        item.addVariants( variantItem );
 
                                     }
                                 }

@@ -26,11 +26,13 @@ import com.wms.core.business.catalog.product.model.description.ProductDescriptio
 import com.wms.core.business.catalog.product.model.image.ProductImage;
 import com.wms.core.business.catalog.product.model.price.ProductPrice;
 import com.wms.core.business.catalog.product.model.relationship.ProductRelationship;
+import com.wms.core.business.catalog.product.model.variant.ProductVariant;
 import com.wms.core.business.catalog.product.service.attribute.ProductAttributeService;
 import com.wms.core.business.catalog.product.service.availability.ProductAvailabilityService;
 import com.wms.core.business.catalog.product.service.image.ProductImageService;
 import com.wms.core.business.catalog.product.service.price.ProductPriceService;
 import com.wms.core.business.catalog.product.service.relationship.ProductRelationshipService;
+import com.wms.core.business.catalog.product.service.variant.ProductVariantService;
 import com.wms.core.business.content.model.FileContentType;
 import com.wms.core.business.content.model.ImageContentFile;
 import com.wms.core.business.generic.exception.ServiceException;
@@ -60,6 +62,9 @@ public class ProductServiceImpl extends SalesManagerEntityServiceImpl<Long, Prod
 	
 	@Autowired
 	ProductAttributeService productAttributeService;
+	
+	@Autowired
+	ProductVariantService productVariantService;
 	
 	@Autowired
 	ProductRelationshipService productRelationshipService;
@@ -251,6 +256,9 @@ public class ProductServiceImpl extends SalesManagerEntityServiceImpl<Long, Prod
 		//List of original attributes
 		Set<ProductAttribute> originalAttributes = null;
 		
+		//List of original attributes
+		Set<ProductVariant> originalVariants = null;
+		
 		//List of original reviews
 		Set<ProductRelationship> originalRelationships = null;
 		
@@ -264,6 +272,7 @@ public class ProductServiceImpl extends SalesManagerEntityServiceImpl<Long, Prod
 			Product originalProduct = this.getById(product.getId());
 			originalAvailabilities = originalProduct.getAvailabilities();
 			originalAttributes = originalProduct.getAttributes();
+			originalVariants = originalProduct.getVariants();
 			originalRelationships = originalProduct.getRelationships();
 			originalProductImages = originalProduct.getImages();
 		} else {
@@ -330,6 +339,25 @@ public class ProductServiceImpl extends SalesManagerEntityServiceImpl<Long, Prod
 			}
 		}
 		
+		LOGGER.debug("Creating variants");
+		List<Long> newVariantsIds = new ArrayList<Long>();
+		if(product.getVariants()!=null && product.getVariants().size()>0) {
+			Set<ProductVariant> variants = product.getVariants();
+			for(ProductVariant variant : variants) {
+				variant.setProduct(product);
+				productVariantService.saveOrUpdate(variant);
+				newVariantsIds.add(variant.getId());
+			}
+		}
+		
+		//cleanup old variants
+		if(originalVariants!=null) {
+			for(ProductVariant variant : originalVariants) {
+				if(!newVariantsIds.contains(variant.getId())) {
+					productVariantService.delete(variant);
+				}
+			}
+		}
 		
 		LOGGER.debug("Creating relationships");
 		List<Long> newRelationshipIds = new ArrayList<Long>();

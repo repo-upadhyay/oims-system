@@ -8,6 +8,6 @@
 		p:password="${db.password}" p:initialPoolSize="${db.initialPoolSize}"
 		p:minPoolSize="${db.minPoolSize}" p:maxPoolSize="${db.maxPoolSize}"
 		p:preferredTestQuery="${db.preferredTestQuery}" p:testConnectionOnCheckin="true"
-		p:idleConnectionTestPeriod="3000" destroy-method="close" />
+		p:idleConnectionTestPeriod="30000" destroy-method="close" />
 		
 </beans>

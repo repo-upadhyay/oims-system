@@ -23,13 +23,11 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.category.model.Category;
 import com.wms.core.business.catalog.product.model.attribute.ProductAttribute;
 import com.wms.core.business.catalog.product.model.availability.ProductAvailability;
@@ -38,13 +36,13 @@ import com.wms.core.business.catalog.product.model.image.ProductImage;
 import com.wms.core.business.catalog.product.model.manufacturer.Manufacturer;
 import com.wms.core.business.catalog.product.model.relationship.ProductRelationship;
 import com.wms.core.business.catalog.product.model.type.ProductType;
+import com.wms.core.business.catalog.product.model.variant.ProductVariant;
 import com.wms.core.business.common.model.audit.AuditListener;
 import com.wms.core.business.common.model.audit.AuditSection;
 import com.wms.core.business.common.model.audit.Auditable;
 import com.wms.core.business.generic.model.SalesManagerEntity;
 import com.wms.core.business.merchant.model.MerchantStore;
 import com.wms.core.business.tax.model.taxclass.TaxClass;
-import com.wms.core.constants.SchemaConstant;
 
 
 @Entity
@@ -70,6 +68,9 @@ public class Product extends SalesManagerEntity<Long, Product> implements Audita
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")
 	private Set<ProductAttribute> attributes = new HashSet<ProductAttribute>();
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")
+	private Set<ProductVariant> variants = new HashSet<ProductVariant>();
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")
 	private Set<ProductImage> images = new HashSet<ProductImage>();
@@ -292,6 +293,14 @@ public class Product extends SalesManagerEntity<Long, Product> implements Audita
 	}
 
 
+
+	public Set<ProductVariant> getVariants() {
+		return variants;
+	}
+
+	public void setVariants(Set<ProductVariant> variants) {
+		this.variants = variants;
+	}
 
 	public Manufacturer getManufacturer() {
 		return manufacturer;

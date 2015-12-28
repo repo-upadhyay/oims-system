@@ -49,6 +49,7 @@
 		<class>com.wms.core.business.catalog.product.model.Product</class>
 		<class>com.wms.core.business.catalog.product.model.description.ProductDescription</class>
 		<class>com.wms.core.business.catalog.product.model.attribute.ProductAttribute</class>
+		<class>com.wms.core.business.catalog.product.model.variant.ProductVariant</class>
 		<class>com.wms.core.business.catalog.product.model.attribute.ProductOption</class>
 		<class>com.wms.core.business.catalog.product.model.attribute.ProductOptionDescription</class>
 		<class>com.wms.core.business.catalog.product.model.attribute.ProductOptionValue</class>
@@ -75,10 +76,12 @@
 		
 		<class>com.wms.core.business.shoppingcart.model.ShoppingCart</class>
 		<class>com.wms.core.business.shoppingcart.model.ShoppingCartAttributeItem</class>
+		<class>com.wms.core.business.shoppingcart.model.ShoppingCartVariantItem</class>
 		<class>com.wms.core.business.shoppingcart.model.ShoppingCartItem</class>
 		
 		<class>com.wms.core.business.payments.model.Transaction</class>
 		
-		
+	
+	
 	</persistence-unit>
 </persistence>

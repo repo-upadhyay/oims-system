@@ -22,16 +22,12 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Transient;
 
-import com.wms.core.business.shoppingcart.model.ShoppingCart;
-import com.wms.core.business.shoppingcart.model.ShoppingCartAttributeItem;
-import com.wms.core.business.shoppingcart.model.ShoppingCartItem;
 import com.wms.core.business.catalog.product.model.Product;
 import com.wms.core.business.catalog.product.model.price.FinalPrice;
 import com.wms.core.business.common.model.audit.AuditListener;
 import com.wms.core.business.common.model.audit.AuditSection;
 import com.wms.core.business.common.model.audit.Auditable;
 import com.wms.core.business.generic.model.SalesManagerEntity;
-import com.wms.core.constants.SchemaConstant;
 
 
 @Entity
@@ -67,6 +63,9 @@ public class ShoppingCartItem extends SalesManagerEntity<Long, ShoppingCartItem>
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true, mappedBy = "shoppingCartItem")
 	private Set<ShoppingCartAttributeItem> attributes = new HashSet<ShoppingCartAttributeItem>();
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true, mappedBy = "shoppingCartItem")
+	private Set<ShoppingCartVariantItem> variants = new HashSet<ShoppingCartVariantItem>();
 	
 	@Transient
 	private BigDecimal itemPrice;//item final price including all rebates
@@ -135,9 +134,19 @@ public class ShoppingCartItem extends SalesManagerEntity<Long, ShoppingCartItem>
 	    this.attributes.addAll( attributes );
 	    //this.attributes = attributes;
 	}
+	
+	public void setVariants(Set<ShoppingCartVariantItem> variants) {
+	    this.variants.clear();
+	    this.variants.addAll( variants );
+	    //this.variants = variants;
+	}
 
 	public Set<ShoppingCartAttributeItem> getAttributes() {
 		return attributes;
+	}
+	
+	public Set<ShoppingCartVariantItem> getVariants() {
+		return variants;
 	}
 
 	public void setItemPrice(BigDecimal itemPrice) {
@@ -194,6 +203,20 @@ public class ShoppingCartItem extends SalesManagerEntity<Long, ShoppingCartItem>
 
 	public void removeAllAttributes(){
 		this.attributes.removeAll(Collections.EMPTY_SET);
+	}
+	
+	public void addVariants(ShoppingCartVariantItem shoppingCartVariantItem)
+	{
+	    this.variants.add(shoppingCartVariantItem);
+	}
+	
+	public void removeVariants(ShoppingCartVariantItem shoppingCartVariantItem)
+	{
+	    this.variants.remove(shoppingCartVariantItem);
+	}
+
+	public void removeAllvariantss(){
+		this.variants.removeAll(Collections.EMPTY_SET);
 	}
 
 	public void setSubTotal(BigDecimal subTotal) {

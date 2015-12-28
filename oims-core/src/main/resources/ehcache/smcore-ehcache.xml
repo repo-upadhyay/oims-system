@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache name="com.oims.core.cache" 
+<ehcache name="com.wms.core.cache" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
 	
@@ -16,7 +16,7 @@
             memoryStoreEvictionPolicy="LRU" />
             
             
-     <cache name="com.oims.OBJECT_CACHE"
+     <cache name="com.wms.OBJECT_CACHE"
            maxElementsInMemory="10000"
            eternal="false"
            overflowToDisk="false"
