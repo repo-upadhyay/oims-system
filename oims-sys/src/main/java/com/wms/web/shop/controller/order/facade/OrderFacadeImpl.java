@@ -686,8 +686,8 @@ public class OrderFacadeImpl implements OrderFacade {
 			
 			//validate shipping
 			if(shippingService.requiresShipping(order.getShoppingCartItems(), store) && order.getSelectedShippingOption()==null) {
-				ServiceException serviceException = new ServiceException(ServiceException.EXCEPTION_VALIDATION,"shipping.required");
-				throw serviceException;
+				/*ServiceException serviceException = new ServiceException(ServiceException.EXCEPTION_VALIDATION,"shipping.required");
+				throw serviceException;*/
 			}
 			
 			//pre-validate credit card

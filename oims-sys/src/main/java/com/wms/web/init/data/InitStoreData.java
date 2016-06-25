@@ -145,10 +145,10 @@ public class InitStoreData implements InitData {
 		
 		//2 languages by default
 		Language en = languageService.getByCode("en");
-		Language fr = languageService.getByCode("fr");
+		//Language fr = languageService.getByCode("fr");
 		
-		Country canada = countryService.getByCode("CA");
-		Zone zone = zoneService.getByCode("QC");
+		Country india = countryService.getByCode("IN");
+		Zone zone = zoneService.getByCode("MH");
 		
 		//create a merchant
 		MerchantStore store = merchantService.getMerchantStore(MerchantStore.DEFAULT_STORE);
@@ -166,15 +166,15 @@ public class InitStoreData implements InitData {
 		    bookEnglishDescription.setLanguage(en);
 		    bookEnglishDescription.setSeUrl("computer-books");
 
-		    CategoryDescription bookFrenchDescription = new CategoryDescription();
+		   /* CategoryDescription bookFrenchDescription = new CategoryDescription();
 		    bookFrenchDescription.setName("Livres d'informatique");
 		    bookFrenchDescription.setCategory(book);
 		    bookFrenchDescription.setLanguage(fr);
-		    bookFrenchDescription.setSeUrl("livres-informatiques");
+		    bookFrenchDescription.setSeUrl("livres-informatiques");*/
 
 		    List<CategoryDescription> descriptions = new ArrayList<CategoryDescription>();
 		    descriptions.add(bookEnglishDescription);
-		    descriptions.add(bookFrenchDescription);
+		  //  descriptions.add(bookFrenchDescription);
 
 		    book.setDescriptions(descriptions);
 
@@ -191,15 +191,15 @@ public class InitStoreData implements InitData {
 		    novsEnglishDescription.setLanguage(en);
 		    novsEnglishDescription.setSeUrl("novels");
 
-		    CategoryDescription novsFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription novsFrenchDescription = new CategoryDescription();
 		    novsFrenchDescription.setName("Romans");
 		    novsFrenchDescription.setCategory(novs);
 		    novsFrenchDescription.setLanguage(fr);
-		    novsFrenchDescription.setSeUrl("romans");
+		    novsFrenchDescription.setSeUrl("romans");*/
 
 		    List<CategoryDescription> descriptions2 = new ArrayList<CategoryDescription>();
 		    descriptions2.add(novsEnglishDescription);
-		    descriptions2.add(novsFrenchDescription);
+		   // descriptions2.add(novsFrenchDescription);
 
 		    novs.setDescriptions(descriptions2);
 
@@ -215,15 +215,15 @@ public class InitStoreData implements InitData {
 		    techEnglishDescription.setLanguage(en);
 		    techEnglishDescription.setSeUrl("technology");
 
-		    CategoryDescription techFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription techFrenchDescription = new CategoryDescription();
 		    techFrenchDescription.setName("Technologie");
 		    techFrenchDescription.setCategory(tech);
 		    techFrenchDescription.setLanguage(fr);
-		    techFrenchDescription.setSeUrl("technologie");
+		    techFrenchDescription.setSeUrl("technologie");*/
 
 		    List<CategoryDescription> descriptions4 = new ArrayList<CategoryDescription>();
 		    descriptions4.add(techEnglishDescription);
-		    descriptions4.add(techFrenchDescription);
+		   // descriptions4.add(techFrenchDescription);
 
 		    tech.setDescriptions(descriptions4);
 		    
@@ -243,15 +243,15 @@ public class InitStoreData implements InitData {
 		    webEnglishDescription.setLanguage(en);
 		    webEnglishDescription.setSeUrl("the-web");
 
-		    CategoryDescription webFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription webFrenchDescription = new CategoryDescription();
 		    webFrenchDescription.setName("Web");
 		    webFrenchDescription.setCategory(web);
 		    webFrenchDescription.setLanguage(fr);
-		    webFrenchDescription.setSeUrl("le-web");
+		    webFrenchDescription.setSeUrl("le-web");*/
 
 		    List<CategoryDescription> descriptions3 = new ArrayList<CategoryDescription>();
 		    descriptions3.add(webEnglishDescription);
-		    descriptions3.add(webFrenchDescription);
+		    //descriptions3.add(webFrenchDescription);
 
 		    web.setDescriptions(descriptions3);
 		    
@@ -273,15 +273,15 @@ public class InitStoreData implements InitData {
 		    fictionEnglishDescription.setLanguage(en);
 		    fictionEnglishDescription.setSeUrl("fiction");
 
-		    CategoryDescription fictionFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription fictionFrenchDescription = new CategoryDescription();
 		    fictionFrenchDescription.setName("Sc Fiction");
 		    fictionFrenchDescription.setCategory(fiction);
 		    fictionFrenchDescription.setLanguage(fr);
-		    fictionFrenchDescription.setSeUrl("fiction");
+		    fictionFrenchDescription.setSeUrl("fiction");*/
 
 		    List<CategoryDescription> fictiondescriptions = new ArrayList<CategoryDescription>();
 		    fictiondescriptions.add(fictionEnglishDescription);
-		    fictiondescriptions.add(fictionFrenchDescription);
+		  //  fictiondescriptions.add(fictionFrenchDescription);
 
 		    fiction.setDescriptions(fictiondescriptions);
 		    
@@ -302,15 +302,15 @@ public class InitStoreData implements InitData {
 		    businessEnglishDescription.setLanguage(en);
 		    businessEnglishDescription.setSeUrl("business");
 
-		    CategoryDescription businessFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription businessFrenchDescription = new CategoryDescription();
 		    businessFrenchDescription.setName("Affaires");
 		    businessFrenchDescription.setCategory(business);
 		    businessFrenchDescription.setLanguage(fr);
-		    businessFrenchDescription.setSeUrl("affaires");
+		    businessFrenchDescription.setSeUrl("affaires");*/
 
 		    List<CategoryDescription> businessdescriptions = new ArrayList<CategoryDescription>();
 		    businessdescriptions.add(businessEnglishDescription);
-		    businessdescriptions.add(businessFrenchDescription);
+		   // businessdescriptions.add(businessFrenchDescription);
 
 		    business.setDescriptions(businessdescriptions);
 		    
@@ -330,15 +330,15 @@ public class InitStoreData implements InitData {
 		    cloudEnglishDescription.setLanguage(en);
 		    cloudEnglishDescription.setSeUrl("cloud-computing");
 
-		    CategoryDescription cloudFrenchDescription = new CategoryDescription();
+		    /*CategoryDescription cloudFrenchDescription = new CategoryDescription();
 		    cloudFrenchDescription.setName("Programmation pour le cloud");
 		    cloudFrenchDescription.setCategory(cloud);
 		    cloudFrenchDescription.setLanguage(fr);
-		    cloudFrenchDescription.setSeUrl("programmation-cloud");
+		    cloudFrenchDescription.setSeUrl("programmation-cloud");*/
 
 		    List<CategoryDescription> clouddescriptions = new ArrayList<CategoryDescription>();
 		    clouddescriptions.add(cloudEnglishDescription);
-		    clouddescriptions.add(cloudFrenchDescription);
+		  //  clouddescriptions.add(cloudFrenchDescription);
 
 		    cloud.setDescriptions(clouddescriptions);
 		    
@@ -776,14 +776,14 @@ public class InitStoreData implements InitData {
 
 		    Customer customer = new Customer();
 			customer.setMerchantStore(store);
-			customer.setEmailAddress("test@oims.com");
+			customer.setEmailAddress("dilip.upd85@gmail.com");
 			customer.setGender(CustomerGender.M);						
 			customer.setAnonymous(false);
-			customer.setCompany("CSTI Consulting");
+			customer.setCompany("XYZ Company");
 			customer.setDateOfBirth(new Date());
 
 			customer.setDefaultLanguage(en);
-			customer.setNick("oims");
+			customer.setNick("customer1");
 			
 			String password = passwordEncoder.encodePassword("password", null);
 			customer.setPassword(password);
@@ -798,31 +798,31 @@ public class InitStoreData implements InitData {
 			}
 			
 		    Delivery delivery = new Delivery();
-		    delivery.setAddress("358 Du Languadoc");
-		    delivery.setCity( "Boucherville" );
-		    delivery.setCountry(canada);
-//		    delivery.setCountryCode(canada.getIsoCode());
-		    delivery.setFirstName("Leonardo" );
-		    delivery.setLastName("DiCaprio" );
-		    delivery.setPostalCode("J4B-8J9" );
+		    delivery.setAddress("Pimple Saudagar");
+		    delivery.setCity( "Pune" );
+		    delivery.setCountry(india);
+//		    delivery.setCountryCode(india.getIsoCode());
+		    delivery.setFirstName("FirstName" );
+		    delivery.setLastName("LastName" );
+		    delivery.setPostalCode("411027" );
 		    delivery.setZone(zone);	    
 		    
 		    Billing billing = new Billing();
-		    billing.setAddress("358 Du Languadoc");
-		    billing.setCity("Boucherville");
-		    billing.setCompany("CSTI Consulting");
-		    billing.setCountry(canada);
-//		    billing.setCountryCode(canada.getIsoCode());
-		    billing.setFirstName("Leonardo" );
-		    billing.setLastName("DiCaprio" );
-		    billing.setPostalCode("J4B-8J9");
+		    billing.setAddress("Pimple Saudagar");
+		    billing.setCity("Pune");
+		    billing.setCompany("XYZ Company");
+		    billing.setCountry(india);
+//		    billing.setCountryCode(india.getIsoCode());
+		    billing.setFirstName("Dilip" );
+		    billing.setLastName("Upadhyay" );
+		    billing.setPostalCode("411027");
 		    billing.setZone(zone);
 		    
 		    customer.setBilling(billing);
 		    customer.setDelivery(delivery);		
 			customerService.create(customer);
 			
-			Currency currency = currencyService.getByCode("CAD");
+			Currency currency = currencyService.getByCode("INR");
 
 			OrderStatusHistory orderStatusHistory = new OrderStatusHistory();
 			
@@ -841,7 +841,7 @@ public class InitStoreData implements InitData {
 			order.setCustomerId(customer.getId());
 			order.setBilling(billing);
 			order.setDelivery(delivery);
-			order.setCustomerEmailAddress("leo@oims.com");
+			order.setCustomerEmailAddress("dilip.upd85@gmail.com");
 			order.setDelivery(delivery);
 			order.setIpAddress("ipAddress" );
 			order.setMerchant(store);
@@ -858,7 +858,7 @@ public class InitStoreData implements InitData {
 			order.setPaymentType(PaymentType.PAYPAL);
 			order.setPaymentModuleCode("paypal");
 			order.setStatus( OrderStatus.DELIVERED);
-			order.setTotal(new BigDecimal(23.99));
+			order.setTotal(new BigDecimal(223.99));
 			
 			
 			//OrderProductDownload - Digital download
@@ -870,7 +870,7 @@ public class InitStoreData implements InitData {
 			//OrderProductPrice
 			OrderProductPrice oproductprice = new OrderProductPrice();
 			oproductprice.setDefaultPrice(true);	
-			oproductprice.setProductPrice(new BigDecimal(19.99) );
+			oproductprice.setProductPrice(new BigDecimal(219.99) );
 			oproductprice.setProductPriceCode("baseprice" );
 			oproductprice.setProductPriceName("Base Price" );
 			//oproductprice.setProductPriceSpecialAmount(new BigDecimal(13.99) );	
@@ -897,7 +897,7 @@ public class InitStoreData implements InitData {
 			subtotal.setText("Summary" );
 			subtotal.setTitle("Summary" );
 			subtotal.setOrderTotalCode("subtotal");
-			subtotal.setValue(new BigDecimal(19.99 ) );
+			subtotal.setValue(new BigDecimal(219.99 ) );
 			subtotal.setOrder(order);
 			
 			order.getOrderTotal().add(subtotal);
@@ -919,7 +919,7 @@ public class InitStoreData implements InitData {
 			total.setText("Total" );
 			total.setTitle("Total" );
 			total.setOrderTotalCode("total");
-			total.setValue(new BigDecimal(23.99) );
+			total.setValue(new BigDecimal(223.99) );
 			total.setOrder(order);
 			
 			order.getOrderTotal().add(total);

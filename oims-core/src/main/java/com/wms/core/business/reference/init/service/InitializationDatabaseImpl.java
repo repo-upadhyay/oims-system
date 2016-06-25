@@ -193,9 +193,9 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		Date date = new Date(System.currentTimeMillis());
 		
 		Language en = languageService.getByCode("en");
-		Country ca = countryService.getByCode("CA");
-		Currency currency = currencyService.getByCode("CAD");
-		Zone qc = zoneService.getByCode("QC");
+		Country ca = countryService.getByCode("IN");
+		Currency currency = currencyService.getByCode("INR");
+		Zone qc = zoneService.getByCode("MH");
 		
 		List<Language> supportedLanguages = new ArrayList<Language>();
 		supportedLanguages.add(en);
@@ -207,12 +207,12 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		store.setDefaultLanguage(en);
 		store.setInBusinessSince(date);
 		store.setZone(qc);
-		store.setStorename("Default store");
+		store.setStorename("Book Store");
 		store.setStorephone("888-888-8888");
 		store.setCode(MerchantStore.DEFAULT_STORE);
-		store.setStorecity("My city");
-		store.setStoreaddress("1234 Street address");
-		store.setStorepostalcode("H2H-2H2");
+		store.setStorecity("Pune");
+		store.setStoreaddress("Pimple Saudagar");
+		store.setStorepostalcode("411027");
 		store.setStoreEmailAddress("test@test.com");
 		store.setDomainName("localhost:8080");
 		store.setStoreTemplate("bootstrap");
